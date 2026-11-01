@@ -3,23 +3,23 @@
   format: mrs
   behavior: domain
   upstream: &cn_cdn_upstream
-    # 1. Apple 中国大陆
+    # 1. Apple 中国大陆 (使用 .yaml 格式)
     apple_cn:
       type: http
-      url: https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/sing/geo/geosite/apple@cn.json
-      format: json
+      url: https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/apple@cn.yaml
+      format: yaml
       behavior: domain
-    # 2. Steam 中国大陆
+    # 2. Steam 中国大陆 (使用 .yaml 格式)
     steam_cn:
       type: http
-      url: https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/sing/geo/geosite/steam@cn.json
-      format: json
+      url: https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/steam@cn.yaml
+      format: yaml
       behavior: domain
-    # 3. Microsoft 中国大陆
+    # 3. Microsoft 中国大陆 (使用 .yaml 格式)
     microsoft_cn:
       type: http
-      url: https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/sing/geo/geosite/microsoft@cn.json
-      format: json
+      url: https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/microsoft@cn.yaml
+      format: yaml
       behavior: domain
 
 # 同时生成一份 yaml 明文版本，方便你以后在浏览器或编辑器里查看包含了哪些域名
