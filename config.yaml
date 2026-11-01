@@ -5,7 +5,7 @@
   upstream: &reject_upstream
     xndeye_reject:
       type: http
-      url: https://raw.githubusercontent.com/xndeye/adblock_list/release/clash.yaml
+      url: https://raw.githubusercontent.com/weidongzhou1994/ad-filters-subscriber/refs/heads/release/clash.yaml
       format: yaml
       behavior: domain
 
@@ -387,7 +387,7 @@
   upstream: &youtube_upstream
     dustinwin_youtube:
       type: http
-      url: https://raw.githubusercontent.com/DustinWin/domain-list-custom/refs/heads/domains/youtube.list
+      url: https://raw.githubusercontent.com/DustinWin/ruleset_geodata/mihomo-ruleset/youtube.list
       format: text
       behavior: domain
 
@@ -489,11 +489,6 @@
   format: mrs
   behavior: ipcidr
   upstream: &telegram_ip_upstream
-    dustinwin_telegram_ip:
-      type: http
-      url: https://github.com/DustinWin/geoip/releases/download/ips/telegramip.list
-      format: text
-      behavior: ipcidr
     sukka_telegram_ip:
       type: http
       url: https://ruleset.skk.moe/Clash/ip/telegram.txt
@@ -523,9 +518,9 @@
     # 1. 优先：DustinWin 规则集
     dustinwin_spotify:
       type: http
-      url: https://raw.githubusercontent.com/DustinWin/domain-list-custom/refs/heads/domains/spotify.list
+      url: https://raw.githubusercontent.com/DustinWin/ruleset_geodata/mihomo-ruleset/spotify.list
       format: text
-      behavior: classical
+      behavior: domain
 
 - path: output/spotify.yaml
   format: yaml
@@ -550,9 +545,9 @@
     # 1. 优先：DustinWin 规则集
     dustinwin_netflix:
       type: http
-      url: https://raw.githubusercontent.com/DustinWin/domain-list-custom/refs/heads/domains/netflix.list
+      url: https://raw.githubusercontent.com/DustinWin/ruleset_geodata/mihomo-ruleset/netflix.list
       format: text
-      behavior: classical
+      behavior: domain
 
 - path: output/netflix.yaml
   format: yaml
@@ -639,8 +634,8 @@
   upstream: &github_upstream
     DustinWin_github:
       type: http
-      url: https://raw.githubusercontent.com/DustinWin/ios_rule_script/e9330ca79db3db6b6f5bc782e0aee44302f1b8c3/rule/Clash/GitHub/GitHub.list
-      format: text
+      url: https://raw.githubusercontent.com/DustinWin/ios_rule_script/refs/heads/master/rule/Clash/GitHub/GitHub.yaml
+      format: yaml
       behavior: domain
 
 - path: output/github.yaml
