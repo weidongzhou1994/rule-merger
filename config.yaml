@@ -80,6 +80,11 @@
       url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cloudflare%40cn.list
       format: text
       behavior: domain
+    google@cn:
+      type: http
+      url: https://raw.githubusercontent.com/DustinWin/ruleset_geodata/refs/heads/mihomo-ruleset/google-cn.list
+      format: text
+      behavior: domain
 
 - path: output/direct.yaml
   format: yaml
@@ -245,11 +250,16 @@
   format: mrs
   behavior: domain
   upstream: &tmdb_upstream
-    DustinWin_games_cn:
+    DustinWin_tmdb:
       type: http
       url: https://raw.githubusercontent.com/senshinya/singbox_ruleset/refs/heads/main/rule/Tmdb/Tmdb.json
       format: json
       behavior: domain
+    local_tmdb:
+      type: file
+      path: local/tmdb.yaml
+      format: yaml
+      behavior: classical
 
 - path: output/tmdb.yaml
   format: yaml
@@ -265,6 +275,326 @@
   format: srs
   behavior: sing-box
   upstream: *tmdb_upstream
+
+# av
+- path: output/av.mrs
+  format: mrs
+  behavior: domain
+  upstream: &av_upstream
+    local_av:
+      type: file
+      path: local/av.yaml
+      format: yaml
+      behavior: classical
+
+- path: output/av.yaml
+  format: yaml
+  behavior: classical
+  upstream: *av_upstream
+
+- path: output/av.json
+  format: json
+  behavior: sing-box
+  upstream: *av_upstream
+
+- path: output/av.srs
+  format: srs
+  behavior: sing-box
+  upstream: *av_upstream
+
+# av_jp
+- path: output/av_jp.mrs
+  format: mrs
+  behavior: domain
+  upstream: &av_jp_upstream
+    local_av_jp:
+      type: file
+      path: local/av_jp.yaml
+      format: yaml
+      behavior: classical
+
+- path: output/av_jp.yaml
+  format: yaml
+  behavior: classical
+  upstream: *av_jp_upstream
+
+- path: output/av_jp.json
+  format: json
+  behavior: sing-box
+  upstream: *av_jp_upstream
+
+- path: output/av_jp.srs
+  format: srs
+  behavior: sing-box
+  upstream: *av_jp_upstream
+
+# cloudflare
+- path: output/cloudflare.mrs
+  format: mrs
+  behavior: domain
+  upstream: &cloudflare_upstream
+    geosite_cloudflare:
+      type: http
+      url: https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geosite/cloudflare.yaml
+      format: yaml
+      behavior: domain
+
+- path: output/cloudflare.yaml
+  format: yaml
+  behavior: classical
+  upstream: *cloudflare_upstream
+
+- path: output/cloudflare.json
+  format: json
+  behavior: sing-box
+  upstream: *cloudflare_upstream
+
+- path: output/cloudflare.srs
+  format: srs
+  behavior: sing-box
+  upstream: *cloudflare_upstream
+
+# cloudflare@ip
+- path: output/cloudflare@ip.mrs
+  format: mrs
+  behavior: ipcidr
+  upstream: &cloudflare_ip_upstream
+    geoip_cloudflare:
+      type: http
+      url: https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@meta/geo/geoip/cloudflare.yaml
+      format: yaml
+      behavior: ipcidr
+
+- path: output/cloudflare@ip.yaml
+  format: yaml
+  behavior: classical
+  upstream: *cloudflare_ip_upstream
+
+- path: output/cloudflare@ip.json
+  format: json
+  behavior: sing-box
+  upstream: *cloudflare_ip_upstream
+
+- path: output/cloudflare@ip.srs
+  format: srs
+  behavior: sing-box
+  upstream: *cloudflare_ip_upstream
+
+# youtube
+- path: output/youtube.mrs
+  format: mrs
+  behavior: domain
+  upstream: &youtube_upstream
+    dustinwin_youtube:
+      type: http
+      url: https://raw.githubusercontent.com/DustinWin/domain-list-custom/refs/heads/domains/youtube.list
+      format: text
+      behavior: domain
+
+- path: output/youtube.yaml
+  format: yaml
+  behavior: classical
+  upstream: *youtube_upstream
+
+- path: output/youtube.json
+  format: json
+  behavior: sing-box
+  upstream: *youtube_upstream
+
+- path: output/youtube.srs
+  format: srs
+  behavior: sing-box
+  upstream: *youtube_upstream
+
+# google (MetaCubeX 域名规则)
+- path: output/google.mrs
+  format: mrs
+  behavior: domain
+  upstream: &google_upstream
+    metacubex_google:
+      type: http
+      url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google.yaml
+      format: yaml
+      behavior: domain
+
+- path: output/google.yaml
+  format: yaml
+  behavior: classical
+  upstream: *google_upstream
+
+- path: output/google.json
+  format: json
+  behavior: sing-box
+  upstream: *google_upstream
+
+- path: output/google.srs
+  format: srs
+  behavior: sing-box
+  upstream: *google_upstream
+
+# google@ip (MetaCubeX IP 规则)
+- path: output/google@ip.mrs
+  format: mrs
+  behavior: ipcidr
+  upstream: &google_ip_upstream
+    metacubex_google_ip:
+      type: http
+      url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/google.yaml
+      format: yaml
+      behavior: ipcidr
+
+- path: output/google@ip.yaml
+  format: yaml
+  behavior: classical
+  upstream: *google_ip_upstream
+
+- path: output/google@ip.json
+  format: json
+  behavior: sing-box
+  upstream: *google_ip_upstream
+
+- path: output/google@ip.srs
+  format: srs
+  behavior: sing-box
+  upstream: *google_ip_upstream
+
+# telegram
+- path: output/telegram.mrs
+  format: mrs
+  behavior: domain
+  upstream: &telegram_upstream
+    sukka_telegram_domain:
+      type: http
+      url: https://ruleset.skk.moe/Clash/ip/telegram.txt
+      format: text
+      behavior: classical
+
+- path: output/telegram.yaml
+  format: yaml
+  behavior: classical
+  upstream: *telegram_upstream
+
+- path: output/telegram.json
+  format: json
+  behavior: sing-box
+  upstream: *telegram_upstream
+
+- path: output/telegram.srs
+  format: srs
+  behavior: sing-box
+  upstream: *telegram_upstream
+
+# telegram@ip
+- path: output/telegram@ip.mrs
+  format: mrs
+  behavior: ipcidr
+  upstream: &telegram_ip_upstream
+    dustinwin_telegram_ip:
+      type: http
+      url: https://github.com/DustinWin/geoip/releases/download/ips/telegramip.list
+      format: text
+      behavior: ipcidr
+    sukka_telegram_ip:
+      type: http
+      url: https://ruleset.skk.moe/Clash/ip/telegram.txt
+      format: text
+      behavior: ipcidr
+
+- path: output/telegram@ip.yaml
+  format: yaml
+  behavior: classical
+  upstream: *telegram_ip_upstream
+
+- path: output/telegram@ip.json
+  format: json
+  behavior: sing-box
+  upstream: *telegram_ip_upstream
+
+- path: output/telegram@ip.srs
+  format: srs
+  behavior: sing-box
+  upstream: *telegram_ip_upstream
+
+# spotify (域名规则，按优先级合并)
+- path: output/spotify.mrs
+  format: mrs
+  behavior: domain
+  upstream: &spotify_upstream
+    # 1. 优先：DustinWin 规则集
+    dustinwin_spotify:
+      type: http
+      url: https://raw.githubusercontent.com/DustinWin/domain-list-custom/refs/heads/domains/spotify.list
+      format: text
+      behavior: domain
+
+- path: output/spotify.yaml
+  format: yaml
+  behavior: classical
+  upstream: *spotify_upstream
+
+- path: output/spotify.json
+  format: json
+  behavior: sing-box
+  upstream: *spotify_upstream
+
+- path: output/spotify.srs
+  format: srs
+  behavior: sing-box
+  upstream: *spotify_upstream
+
+# netflix (域名规则)
+- path: output/netflix.mrs
+  format: mrs
+  behavior: domain
+  upstream: &netflix_upstream
+    # 1. 优先：DustinWin 规则集
+    dustinwin_netflix:
+      type: http
+      url: https://raw.githubusercontent.com/DustinWin/domain-list-custom/refs/heads/domains/netflix.list
+      format: text
+      behavior: domain
+
+- path: output/netflix.yaml
+  format: yaml
+  behavior: classical
+  upstream: *netflix_upstream
+
+- path: output/netflix.json
+  format: json
+  behavior: sing-box
+  upstream: *netflix_upstream
+
+- path: output/netflix.srs
+  format: srs
+  behavior: sing-box
+  upstream: *netflix_upstream
+
+# netflix@ip (IP 规则)
+- path: output/netflix@ip.mrs
+  format: mrs
+  behavior: ipcidr
+  upstream: &netflix_ip_upstream
+    # 1. 优先：DustinWin IP 规则
+    dustinwin_netflix_ip:
+      type: http
+      url: https://raw.githubusercontent.com/DustinWin/ios_rule_script/e9330ca79db3db6b6f5bc782e0aee44302f1b8c3/rule/Clash/Netflix/Netflix_IP.txt
+      format: text
+      behavior: ipcidr
+
+- path: output/netflix@ip.yaml
+  format: yaml
+  behavior: classical
+  upstream: *netflix_ip_upstream
+
+- path: output/netflix@ip.json
+  format: json
+  behavior: sing-box
+  upstream: *netflix_ip_upstream
+
+- path: output/netflix@ip.srs
+  format: srs
+  behavior: sing-box
+  upstream: *netflix_ip_upstream
 
 # ai
 - path: output/ai.mrs
@@ -302,6 +632,84 @@
   behavior: sing-box
   upstream: *ai_upstream
 
+# github (MetaCubeX 域名规则)
+- path: output/github.mrs
+  format: mrs
+  behavior: domain
+  upstream: &github_upstream
+    DustinWin_github:
+      type: http
+      url: https://raw.githubusercontent.com/DustinWin/ios_rule_script/e9330ca79db3db6b6f5bc782e0aee44302f1b8c3/rule/Clash/GitHub/GitHub.list
+      format: text
+      behavior: domain
+
+- path: output/github.yaml
+  format: yaml
+  behavior: classical
+  upstream: *github_upstream
+
+- path: output/github.json
+  format: json
+  behavior: sing-box
+  upstream: *github_upstream
+
+- path: output/github.srs
+  format: srs
+  behavior: sing-box
+  upstream: *github_upstream
+
+# steam (域名规则，用于商店、社区等)
+- path: output/steam.mrs
+  format: mrs
+  behavior: domain
+  upstream: &steam_upstream
+    metacubex_steam:
+      type: http
+      url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/steam.list
+      format: text
+      behavior: domain
+
+- path: output/steam.yaml
+  format: yaml
+  behavior: classical
+  upstream: *steam_upstream
+
+- path: output/steam.json
+  format: json
+  behavior: sing-box
+  upstream: *steam_upstream
+
+- path: output/steam.srs
+  format: srs
+  behavior: sing-box
+  upstream: *steam_upstream
+
+# microsoft (域名规则)
+- path: output/microsoft.mrs
+  format: mrs
+  behavior: domain
+  upstream: &microsoft_upstream
+    # 1. Sukka CDN 域名补充
+    sukka_microsoft:
+      type: http
+      url: https://ruleset.skk.moe/List/non_ip/microsoft.conf
+      format: text
+      behavior: classical
+
+- path: output/microsoft.yaml
+  format: yaml
+  behavior: classical
+  upstream: *microsoft_upstream
+
+- path: output/microsoft.json
+  format: json
+  behavior: sing-box
+  upstream: *microsoft_upstream
+
+- path: output/microsoft.srs
+  format: srs
+  behavior: sing-box
+  upstream: *microsoft_upstream
 
 # lan@ip
 - path: output/lan@ip.mrs
