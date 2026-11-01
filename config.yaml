@@ -69,7 +69,7 @@
       type: file
       path: local/direct.yaml
       format: yaml
-      behavicloudflareor: classical
+      behavior: classical
     geosite_cn:
       type: http
       url: https://raw.githubusercontent.com/DustinWin/ruleset_geodata/mihomo-ruleset/cn.list
@@ -525,7 +525,7 @@
       type: http
       url: https://raw.githubusercontent.com/DustinWin/domain-list-custom/refs/heads/domains/spotify.list
       format: text
-      behavior: domain
+      behavior: classical
 
 - path: output/spotify.yaml
   format: yaml
@@ -552,7 +552,7 @@
       type: http
       url: https://raw.githubusercontent.com/DustinWin/domain-list-custom/refs/heads/domains/netflix.list
       format: text
-      behavior: domain
+      behavior: classical
 
 - path: output/netflix.yaml
   format: yaml
@@ -610,7 +610,7 @@
       type: http
       url: https://raw.githubusercontent.com/DustinWin/ruleset_geodata/mihomo-ruleset/ai.list
       format: text
-      behavior: doamin
+      behavior: domain
     local_ai:
       type: file
       path: local/ai.yaml
@@ -719,7 +719,7 @@
     private:
       type: http
       url: https://raw.githubusercontent.com/DustinWin/ruleset_geodata/mihomo-ruleset/private.list
-      format: text
+      format: yaml
       behavior: domain
 
     DustinWin_private:
