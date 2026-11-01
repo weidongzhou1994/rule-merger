@@ -636,7 +636,7 @@
       type: http
       url: https://raw.githubusercontent.com/DustinWin/ios_rule_script/refs/heads/master/rule/Clash/GitHub/GitHub.yaml
       format: yaml
-      behavior: domain
+      behavior: classical
 
 - path: output/github.yaml
   format: yaml
