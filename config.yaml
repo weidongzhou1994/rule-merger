@@ -465,8 +465,8 @@
   upstream: &telegram_upstream
     sukka_telegram_domain:
       type: http
-      url: https://ruleset.skk.moe/Clash/ip/telegram.txt
-      format: text
+      url: https://github.com/MetaCubeX/meta-rules-dat/blob/sing/geo/geosite/telegram.json
+      format: json
       behavior: classical
 
 - path: output/telegram.yaml
@@ -493,7 +493,7 @@
       type: http
       url: https://ruleset.skk.moe/Clash/ip/telegram.txt
       format: text
-      behavior: ipcidr
+      behavior: classical
 
 - path: output/telegram@ip.yaml
   format: yaml
