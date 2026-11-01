@@ -467,7 +467,7 @@
       type: http
       url: https://github.com/MetaCubeX/meta-rules-dat/blob/sing/geo/geosite/telegram.json
       format: json
-      behavior: classical
+      behavior: domain
 
 - path: output/telegram.yaml
   format: yaml
