@@ -714,7 +714,7 @@
     private:
       type: http
       url: https://raw.githubusercontent.com/DustinWin/ruleset_geodata/mihomo-ruleset/private.list
-      format: yaml
+      format: text
       behavior: domain
 
     DustinWin_private:
