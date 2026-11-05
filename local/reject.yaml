@@ -1,0 +1,9 @@
+payload:
+  - DOMAIN,softwareupdates.amazon.com
+  - DOMAIN,updates.amazon.com
+  - DOMAIN,firmwareupdates.amazon.com
+  - DOMAIN,s3.amazonaws.com
+  - DOMAIN-SUFFIX,amzdigitaldownloads.edgesuite.net
+  - DOMAIN-SUFFIX,device-metrics-us.amazon.com
+  - DOMAIN-SUFFIX,device-metrics-eu.amazon.com
+  - DOMAIN-SUFFIX,device-metrics.amazon.com
