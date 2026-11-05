@@ -8,6 +8,11 @@
       url: https://raw.githubusercontent.com/weidongzhou1994/ad-filters-subscriber/refs/heads/release/clash.yaml
       format: yaml
       behavior: domain
+    local_reject:
+      type: file
+      path: local/reject.yaml
+      format: yaml
+      behavior: classical
 
 - path: output/reject.yaml
   format: yaml
