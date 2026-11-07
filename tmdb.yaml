@@ -1,0 +1,7 @@
+# 更新时间: 2026-11-07 17:11:42
+# 规则数量: 4
+payload:
+  - DOMAIN,fanart.tv
+  - DOMAIN,introdb.app
+  - DOMAIN,theintrodb.org
+  - DOMAIN,thetvdb.com
