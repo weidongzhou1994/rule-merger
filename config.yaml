@@ -8,11 +8,6 @@
       url: https://raw.githubusercontent.com/weidongzhou1994/ad-filters-subscriber/refs/heads/release/clash.yaml
       format: yaml
       behavior: domain
-    local_reject:
-      type: file
-      path: local/reject.yaml
-      format: yaml
-      behavior: classical
 
 - path: output/reject.yaml
   format: yaml
@@ -27,6 +22,11 @@
 - path: output/reject.srs
   format: srs
   behavior: sing-box
+  upstream: *reject_upstream
+
+- path: output/reject.list
+  format: list
+  behavior: classical
   upstream: *reject_upstream
 
 # reject@ip
@@ -53,6 +53,11 @@
 - path: output/reject@ip.srs
   format: srs
   behavior: sing-box
+  upstream: *reject_ip_upstream
+
+- path: output/reject@ip.list
+  format: list
+  behavior: classical
   upstream: *reject_ip_upstream
 
 # direct
@@ -106,6 +111,11 @@
   behavior: sing-box
   upstream: *direct_upstream
 
+- path: output/direct.list
+  format: list
+  behavior: classical
+  upstream: *direct_upstream
+
 # direct@ip
 - path: output/direct@ip.mrs
   format: mrs
@@ -147,6 +157,11 @@
   behavior: sing-box
   upstream: *direct_ip_upstream
 
+- path: output/direct@ip.list
+  format: list
+  behavior: classical
+  upstream: *direct_ip_upstream
+
 # microsoft@cn
 - path: output/microsoft@cn.mrs
   format: mrs
@@ -181,6 +196,11 @@
 - path: output/microsoft@cn.srs
   format: srs
   behavior: sing-box
+  upstream: *microsoft_cn_upstream
+
+- path: output/microsoft@cn.list
+  format: list
+  behavior: classical
   upstream: *microsoft_cn_upstream
 
 # apple@cn
@@ -224,6 +244,11 @@
   behavior: sing-box
   upstream: *apple_cn_upstream
 
+- path: output/apple@cn.list
+  format: list
+  behavior: classical
+  upstream: *apple_cn_upstream
+
 # game@cn
 - path: output/game@cn.mrs
   format: mrs
@@ -248,6 +273,11 @@
 - path: output/game@cn.srs
   format: srs
   behavior: sing-box
+  upstream: *game_cn_upstream
+
+- path: output/game@cn.list
+  format: list
+  behavior: classical
   upstream: *game_cn_upstream
 
 # tmdb
@@ -281,6 +311,11 @@
   behavior: sing-box
   upstream: *tmdb_upstream
 
+- path: output/tmdb.list
+  format: list
+  behavior: classical
+  upstream: *tmdb_upstream
+
 # av
 - path: output/av.mrs
   format: mrs
@@ -305,6 +340,11 @@
 - path: output/av.srs
   format: srs
   behavior: sing-box
+  upstream: *av_upstream
+
+- path: output/av.list
+  format: list
+  behavior: classical
   upstream: *av_upstream
 
 # av_jp
@@ -333,6 +373,11 @@
   behavior: sing-box
   upstream: *av_jp_upstream
 
+- path: output/av_jp.list
+  format: list
+  behavior: classical
+  upstream: *av_jp_upstream
+
 # cloudflare
 - path: output/cloudflare.mrs
   format: mrs
@@ -357,6 +402,11 @@
 - path: output/cloudflare.srs
   format: srs
   behavior: sing-box
+  upstream: *cloudflare_upstream
+
+- path: output/cloudflare.list
+  format: list
+  behavior: classical
   upstream: *cloudflare_upstream
 
 # cloudflare@ip
@@ -385,6 +435,11 @@
   behavior: sing-box
   upstream: *cloudflare_ip_upstream
 
+- path: output/cloudflare@ip.list
+  format: list
+  behavior: classical
+  upstream: *cloudflare_ip_upstream
+
 # youtube
 - path: output/youtube.mrs
   format: mrs
@@ -409,6 +464,11 @@
 - path: output/youtube.srs
   format: srs
   behavior: sing-box
+  upstream: *youtube_upstream
+
+- path: output/youtube.list
+  format: list
+  behavior: classical
   upstream: *youtube_upstream
 
 # google (MetaCubeX 域名规则)
@@ -437,6 +497,11 @@
   behavior: sing-box
   upstream: *google_upstream
 
+- path: output/google.list
+  format: list
+  behavior: classical
+  upstream: *google_upstream
+
 # google@ip (MetaCubeX IP 规则)
 - path: output/google@ip.mrs
   format: mrs
@@ -461,6 +526,11 @@
 - path: output/google@ip.srs
   format: srs
   behavior: sing-box
+  upstream: *google_ip_upstream
+
+- path: output/google@ip.list
+  format: list
+  behavior: classical
   upstream: *google_ip_upstream
 
 # telegram
@@ -489,6 +559,11 @@
   behavior: sing-box
   upstream: *telegram_upstream
 
+- path: output/telegram.list
+  format: list
+  behavior: classical
+  upstream: *telegram_upstream
+
 # telegram@ip
 - path: output/telegram@ip.mrs
   format: mrs
@@ -513,6 +588,11 @@
 - path: output/telegram@ip.srs
   format: srs
   behavior: sing-box
+  upstream: *telegram_ip_upstream
+
+- path: output/telegram@ip.list
+  format: list
+  behavior: classical
   upstream: *telegram_ip_upstream
 
 # spotify (域名规则，按优先级合并)
@@ -542,6 +622,11 @@
   behavior: sing-box
   upstream: *spotify_upstream
 
+- path: output/spotify.list
+  format: list
+  behavior: classical
+  upstream: *spotify_upstream
+
 # netflix (域名规则)
 - path: output/netflix.mrs
   format: mrs
@@ -569,6 +654,11 @@
   behavior: sing-box
   upstream: *netflix_upstream
 
+- path: output/netflix.list
+  format: list
+  behavior: classical
+  upstream: *netflix_upstream
+
 # netflix@ip (IP 规则)
 - path: output/netflix@ip.mrs
   format: mrs
@@ -594,6 +684,11 @@
 - path: output/netflix@ip.srs
   format: srs
   behavior: sing-box
+  upstream: *netflix_ip_upstream
+
+- path: output/netflix@ip.list
+  format: list
+  behavior: classical
   upstream: *netflix_ip_upstream
 
 # ai
@@ -632,6 +727,11 @@
   behavior: sing-box
   upstream: *ai_upstream
 
+- path: output/ai.list
+  format: list
+  behavior: classical
+  upstream: *ai_upstream
+
 # github (MetaCubeX 域名规则)
 - path: output/github.mrs
   format: mrs
@@ -656,6 +756,11 @@
 - path: output/github.srs
   format: srs
   behavior: sing-box
+  upstream: *github_upstream
+
+- path: output/github.list
+  format: list
+  behavior: classical
   upstream: *github_upstream
 
 # steam (域名规则，用于商店、社区等)
@@ -684,6 +789,11 @@
   behavior: sing-box
   upstream: *steam_upstream
 
+- path: output/steam.list
+  format: list
+  behavior: classical
+  upstream: *steam_upstream
+
 # microsoft (域名规则)
 - path: output/microsoft.mrs
   format: mrs
@@ -709,6 +819,11 @@
 - path: output/microsoft.srs
   format: srs
   behavior: sing-box
+  upstream: *microsoft_upstream
+
+- path: output/microsoft.list
+  format: list
+  behavior: classical
   upstream: *microsoft_upstream
 
 # lan@ip
@@ -743,6 +858,11 @@
   behavior: sing-box
   upstream: *lan_ip_upstream
 
+- path: output/lan@ip.list
+  format: list
+  behavior: classical
+  upstream: *lan_ip_upstream
+
 # lan
 - path: output/lan.mrs
   format: mrs
@@ -775,6 +895,11 @@
   behavior: sing-box
   upstream: *lan_upstream
 
+- path: output/lan.list
+  format: list
+  behavior: classical
+  upstream: *lan_upstream
+
 # fakeip-filter
 - path: output/fakeip-filter.mrs
   format: mrs
@@ -805,4 +930,9 @@
 - path: output/fakeip-filter.srs
   format: srs
   behavior: sing-box
+  upstream: *fakeip_filter_upstream
+
+- path: output/fakeip-filter.list
+  format: list
+  behavior: domain
   upstream: *fakeip_filter_upstream
