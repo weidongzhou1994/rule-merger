@@ -1,0 +1,13 @@
+{
+  "version": 4,
+  "rules": [
+    {
+      "domain": [
+        "fanart.tv",
+        "introdb.app",
+        "theintrodb.org",
+        "thetvdb.com"
+      ]
+    }
+  ]
+}
