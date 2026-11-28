@@ -1,0 +1,17 @@
+{
+  "version": 4,
+  "rules": [
+    {
+      "domain_suffix": [
+        "chunman4.com",
+        "djhdhs.us",
+        "jable.tv",
+        "javlibrary.com",
+        "mushroomtrack.com",
+        "sehuatang.com",
+        "sehuatang.org",
+        "sir.monster"
+      ]
+    }
+  ]
+}
